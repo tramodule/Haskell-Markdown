@@ -1,10 +1,9 @@
 ---
-title: Assignment 2 - Markdown2HTML
-author: FIT2102 Programming Paradigms
+title: Markdown -> HTML + CSS Rendering
 margin: 1inch
 ---
 
-# Assignment 2: Markdown2HTML
+#  Markdown -> HTML + CSS Rendering
 
 Please do not change the names of the functions defined in the Assignment.hs file. You may (and are highly encouraged) to implement your parsers **alongside** these pre-defined functions.
 
