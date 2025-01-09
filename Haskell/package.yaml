@@ -1,0 +1,110 @@
+name: exercises
+version: 0.1.0.0
+github: "githubuser/intro"
+license: BSD3
+author: "Rhys Newbury, Lauren Yim"
+maintainer: "rhys.newbury@monash.edu"
+copyright: "2024 Rhys Newbury"
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/githubuser/intro#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+
+executables:
+  main:
+    main: Main.hs
+    source-dirs: app
+    other-modules: []
+    ghc-options:
+      - -Wall
+      - -Werror
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+
+      # Disable warnings that are unnecessary
+      - -Wno-implicit-prelude
+      - -Wno-prepositive-qualified-module
+      - -Wno-missing-deriving-strategies
+      - -Wno-missing-safe-haskell-mode
+      - -Wno-missing-kind-signatures
+
+      # Disable warnings that are inconvenient
+      - -Wno-unused-top-binds
+      # - -Wno-unused-matches
+    dependencies:
+      - exercises
+      - scotty
+      - text
+      - aeson
+      - mtl
+      - time
+
+library:
+  source-dirs:
+    - src
+  ghc-options:
+    # For details on warnings: https://downloads.haskell.org/~ghc/master/users-guide/using-warnings.html# This list taken from https://medium.com/mercury-bank/enable-all-the-warnings-a0517bc081c3# Enable all warnings with -Weverything, then disable the ones we don’t care about
+    - -Weverything
+
+    - -Wno-missing-exported-signatures # missing-exported-signatures turns off the more strict -Wmissing-signatures. See https://ghc.haskell.org/trac/ghc/ticket/14794#ticket
+    - -Wno-missing-import-lists # Requires explicit imports of _every_ function (e.g. ‘$’); too strict
+    - -Wno-missed-specialisations # When GHC can’t specialize a polymorphic function. No big deal and requires fixing underlying libraries to solve.
+    - -Wno-all-missed-specialisations # See missed-specialisations
+    - -Wno-unsafe # Don’t use Safe Haskell warnings
+    - -Wno-safe # Don’t use Safe Haskell warnings
+    - -Wno-missing-local-signatures # Warning for polymorphic local bindings; nothing wrong with those.
+    - -Wno-monomorphism-restriction # Don’t warn if the monomorphism restriction is used
+
+    # Disable warnings that are unnecessary
+    - -Wno-implicit-prelude
+    - -Wno-prepositive-qualified-module
+    - -Wno-missing-deriving-strategies
+    - -Wno-missing-safe-haskell-mode
+    - -Wno-missing-kind-signatures
+    - -Wno-operator-whitespace
+
+    # Disable warnings that are inconvenient
+    # - -Wno-unused-top-binds
+    - -Wno-unused-matches
+
+    # Make all warnings errors...
+    - -Werror
+    # ...except some warnings
+    - -Wwarn=missing-export-lists # this makes it easier to test code in ghci by not specifying an export list
+    - -Wwarn=name-shadowing
+    - -Wwarn=unused-imports
+    - -Wwarn=unused-top-binds
+    - -Wwarn=unused-local-binds
+    - -Wwarn=unused-packages
+    - -Wwarn=unused-pattern-binds
+    - -Wwarn=unused-record-wildcards
+    - -Wwarn=type-defaults
+  default-extensions:
+    - InstanceSigs
+  dependencies:
+    - time
+
+tests:
+  batch:
+    main: Spec.hs       
+    source-dirs: test
+    ghc-options: []
+    dependencies:
+      - exercises
+      - Glob
+      - doctest
+      - filepath
+      - process
+      - directory
+      - QuickCheck >= 2.14
+      - regex-tdfa
+  
