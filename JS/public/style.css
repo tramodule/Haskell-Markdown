@@ -1,0 +1,376 @@
+/* Reset and basic styles */
+body {
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #2d2d2d;
+    line-height: 1.6;
+}
+
+/* Styling for the Save Button */
+.save-button {
+    background-color: #4c4c4c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.save-button:hover {
+    background-color: #28742c;
+}
+
+/* Header and footer styling */
+header,
+footer {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1,
+footer p {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 1.5em;
+    color: #444444;
+    margin-bottom: 10px;
+}
+
+
+
+/* Containers setup */
+#container-row1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#title-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.state-label {
+    color: green; /* This will make the text green */
+    font-weight: bold; /* Makes the text bold */
+}
+
+/* Common section styles */
+section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* width: auto; */
+    padding: 10px;
+    /* box-sizing: border-box; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+/* Input Section */
+#input-section {
+    width: 100%;
+}
+
+#markdown-input {
+    width: 94.5%;
+    height: 400px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333333;
+    resize: none;
+    overflow: auto;
+    white-space: pre;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Raw Markdown Section */
+#raw-section {
+    width: 100%;
+}
+
+#markdown-raw {
+    width: 95.5%;
+    height: 410px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333333;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Output Section */
+#output-section {
+    width: 100%;
+}
+
+#title-section input[type="checkbox"] {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+#title-section label[for="include-style"] {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+#html-output {
+    width: 98%;
+    height: 400px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #333333;
+    overflow: auto;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#title-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styling for rendered HTML content */
+#html-output h3,
+#html-output h4,
+#html-output h5,
+#html-output h6 {
+    color: #2d2d2d;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#html-output h2 {
+    font-size: 1.5em;
+    color: #444444;
+    margin-bottom: 10px;
+}
+
+#html-output h1 {
+    font-size: 2em;
+    color: #444444;
+    margin-bottom: 10px;
+}
+#html-output p {
+    margin-bottom: 15px;
+    color: #444444;
+}
+
+#html-output code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 90%;
+    color: #c7254e;
+}
+
+#html-output pre {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+/* Link Styling */
+
+#html-output a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+#html-output a:hover {
+    text-decoration: underline;
+}
+
+#html-output a:visited {
+    color: #7a5ea8;
+    border-bottom-color: #7a5ea8;
+}
+
+/* Blockquote Styling with Rounded Corners */
+#html-output blockquote {
+    border-left: 4px solid #cccccc;
+    margin: 20px 0;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    color: #555555;
+    position: relative;
+    border-radius: 8px; /* Added rounded corners */
+}
+
+/* Remove the optional colored bar since we have the border-left */
+#html-output blockquote::before {
+    content: none;
+}
+
+/* Table Styling */
+#html-output table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#html-output th {
+    padding: 12px 15px;
+    text-align: left;
+    background-color: rgb(142, 142, 142);
+    border-bottom: 1px solid #dddddd;
+}
+
+#html-output td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+#html-output thead {
+    background-color: #f2f2f2;
+}
+
+#html-output tr:hover {
+    background-color: #f9f9f9;
+}
+
+#html-output th {
+    font-weight: bold;
+    color: #333333;
+}
+
+/* First and last table row adjustments */
+#html-output tr:last-child td {
+    border-bottom: none;
+}
+
+/* Styling for footnote reference paragraphs */
+#html-output p[id^="fn"] {
+    font-size: 0.85em; /* Smaller font size for footnotes */
+    color: #555; /* Slightly lighter color for differentiation */
+    line-height: 1.4;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #e0e0e0; /* Thin top border to separate footnotes */
+    padding-top: 5px;
+}
+
+/* Footnote superscript styling */
+#html-output a[href^="#fnref"] {
+    font-size: 0.85em; /* Keep it consistent with footnote size */
+    vertical-align: super; /* Superscript style */
+    text-decoration: none; /* No underline for the superscript */
+    color: #007acc; /* Blue color for the footnote reference link */
+}
+
+#html-output a[href^="#fnref"]:hover {
+    text-decoration: underline; /* Add underline on hover for links */
+    color: #004a99; /* Darker blue on hover */
+}
+
+/* Scrollbar customization */
+textarea::-webkit-scrollbar,
+#markdown-raw::-webkit-scrollbar,
+#html-output::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+textarea::-webkit-scrollbar-thumb,
+#markdown-raw::-webkit-scrollbar-thumb,
+#html-output::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-track,
+#markdown-raw::-webkit-scrollbar-track,
+#html-output::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+#html-output ol {
+    counter-reset: cupcake;
+    padding-left: 32px;
+}
+#html-output ol li {
+    counter-increment: cupcake;
+}
+
+#html-output ol li::marker {
+    content: counters(cupcake, '.') ' ';
+    /* Whatever custom styles you want here */
+    color: hotpink;
+    font-weight: bold;
+    font-family: cursive;
+}
+/* Footer styles */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2d2d2d;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+  
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #container-row1 {
+        flex-direction: column;
+    }
+
+    #input-section,
+    #raw-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

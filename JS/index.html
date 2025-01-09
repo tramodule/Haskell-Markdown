@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML Converter</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+
+<body>
+    <header>
+        <h1>Markdown to HTML Converter</h1>
+    </header>
+
+    <main>
+        <section id="title-section">
+            <h2>Change Page Title:</h2>
+            <input type="text" id="title-input" placeholder="Enter the HTML page title here...">
+            <div style="display: flex; align-items: center;">
+                <button class="save-button" id="save-button">Save HTML Output</button> 
+                <input type="checkbox" id="include-style" style="margin-left: 10px;">
+                <label for="include-style" style="margin-left: 5px;">Include Style</label>
+            </div>
+            <label class="state-label" id="label-status-save"></label>
+        </section>
+
+        <div id="container-row1" style="display: flex; width: 100%; justify-content: space-between;">
+            <section id="input-section" style="width: 48%; padding-right: 10px;">
+                <h2>Enter Markdown</h2>
+                <textarea id="markdown-input" placeholder="Enter your Markdown here..." ></textarea>
+            </section>
+            <section id="raw-section" style="width: 48%; padding-left: 10px;">
+                <h2>Raw HTML</h2>
+                <div id="markdown-raw"></div>
+            </section>
+        </div>
+
+        <!-- Second row: HTML Output below the first row -->
+        <div id="container-row2" style="margin-top: 20px; width: 100%;">
+            <section id="output-section">
+            
+                <h2>HTML Output (Rendered)</h2>
+                <div id="html-output" ></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Developed by Tramodule</p>
+    </footer>
+    <script src="./src/main.ts" type="module"></script>
+</body>
+
+</html>

@@ -1,15 +1,37 @@
-# Haskell-Markdown
-A versatile tool combining Haskell, JavaScript, and HTML to create a seamless environment for parsing and rendering Markdown into HTML. Users can input raw text with Markdown symbols through an interactive interface and instantly generate beautifully rendered HTML pages.
+---
+title: Assignment 2 - Markdown2HTML
+author: FIT2102 Programming Paradigms
+margin: 1inch
+---
+
+# Assignment 2: Markdown2HTML
+
+Please do not change the names of the functions defined in the Assignment.hs file. You may (and are highly encouraged) to implement your parsers **alongside** these pre-defined functions.
+
+## Running the Code
+
+```
+$ stack test
+```
+
+This will generate the HTML files using the sample input markdown files, by running your code for each exercise.
+
+All example markdown files are stored within `examples/input` and the output of your parser will be saved in `examples/output`.
 
 
-## Features:
+## Running the Interactive Page
 
-- Markdown Parsing: A robust parser written in Haskell to handle standard Markdown syntax, including headings, lists, tables, images, and more.
-- Interactive User Interface: Built using JavaScript and HTML, the interface allows users to:
-    - Input raw text with Markdown syntax.
-    - Preview the rendered HTML output in real time.
-    - Save or export the final HTML page for use in other projects.
-- Live Rendering: Changes in the input Markdown text are reflected immediately in the HTML output, enabling a smooth workflow.
-- Extensible and Customizable: Modify the parser or the UI to add custom Markdown syntax or features as needed.
+In the Haskell folder run:
 
-## Use Cases:
+```
+$ stack run
+```
+
+In a separate terminal, in the javascript folder run:
+
+```
+$ npm i
+$ npm run dev
+```
+
+You can type markdown in to the LHS of the webpage and inspect the converted HTML.
