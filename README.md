@@ -1,7 +1,3 @@
----
-title: Markdown -> HTML + CSS Rendering
-margin: 1inch
----
 
 #  Markdown -> HTML + CSS Rendering
 
